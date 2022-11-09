@@ -13,6 +13,7 @@
     --secondary-bg-color: #F5F4FA;
     --icons-color: #AFB1B8;
     --border-color: #AFB1B8;
+    --cubic: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* html {
@@ -145,6 +146,8 @@ body {
 }
 
 .site-nav .link {
+    position: relative;
+    
     color: var(--title-text-color);
     
     font-weight: 500;
@@ -202,6 +205,24 @@ body {
 
 .link.current {
     color: var(--accent-color);
+}
+
+.link.current::after {
+    content: '';
+
+    position: absolute;
+    display: inline-block;
+
+    height: 4px;
+    width: 100%;
+
+    left: 0;
+    bottom: 0;
+    margin-bottom: -1px;
+
+    border-radius: 2px;
+
+    background-color: var(--accent-color);
 }
 
 .contact-icons {
